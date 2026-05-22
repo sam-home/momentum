@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/momentum/static/css/main.693f344b.css",
+    "main.js": "/momentum/static/js/main.8711b22a.js",
+    "static/js/453.130d0cdb.chunk.js": "/momentum/static/js/453.130d0cdb.chunk.js",
+    "index.html": "/momentum/index.html",
+    "main.693f344b.css.map": "/momentum/static/css/main.693f344b.css.map",
+    "main.8711b22a.js.map": "/momentum/static/js/main.8711b22a.js.map",
+    "453.130d0cdb.chunk.js.map": "/momentum/static/js/453.130d0cdb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.693f344b.css",
+    "static/js/main.8711b22a.js"
+  ]
+}
