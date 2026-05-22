@@ -1,0 +1,133 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+}
+
+.date-header {
+  flex-shrink: 0;
+  padding: 1rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.date-header:active {
+  cursor: grabbing;
+}
+
+.date-header .card {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.date-header .card:hover {
+  transform: scale(1.02);
+}
+
+.date-header h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.categories-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+.category-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 150px;
+  position: relative;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.category-card:active {
+  transform: translateY(-2px);
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+.category-card .btn-outline-light {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.category-card .btn-outline-light:hover {
+  opacity: 1;
+}
+
+.category-card .card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.card.bg-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.card.bg-success {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+}
+
+.card.bg-info {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+.card.bg-danger {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .date-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .category-card {
+    min-height: 120px;
+  }
+
+  .category-icon {
+    font-size: 1.75rem;
+  }
+}
+
+/* Smooth scrolling */
+.categories-container {
+  scroll-behavior: smooth;
+}
+
+/* Remove default input styles on mobile */
+input,
+textarea {
+  font-size: 16px;
+}
+
+/* Touch-friendly padding */
+@media (hover: none) {
+  .category-card {
+    min-height: 140px;
+  }
+
+  .date-header .card-body {
+    padding: 2rem 1rem;
+  }
+}
+
