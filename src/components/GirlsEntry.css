@@ -1,0 +1,70 @@
+.girls-entry-card {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.approach-buttons {
+  padding: 0.5rem 0;
+}
+
+.approach-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  gap: 3px;
+  backdrop-filter: blur(4px);
+}
+
+.approach-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.approach-btn:active {
+  transform: scale(0.95);
+}
+
+.approach-btn.active {
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.approach-btn.active:hover {
+  transform: scale(1.12);
+}
+
+.approach-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.approach-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* Touch-Geräte: etwas größer */
+@media (hover: none) {
+  .approach-btn {
+    width: 68px;
+    height: 68px;
+  }
+}
+

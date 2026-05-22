@@ -61,6 +61,11 @@
   max-height: 200px;
 }
 
+/* Wrapper für Entry-Komponenten – keine Höhenbeschränkung */
+.entry-card-wrapper {
+  width: 100%;
+}
+
 .category-card {
   border: none;
   border-radius: 12px;

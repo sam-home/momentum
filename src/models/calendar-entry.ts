@@ -1,4 +1,5 @@
 import {Approach} from './approach';
+import {FoodType} from './units';
 
 export type WorkoutEntry = {
     done: boolean,
@@ -6,9 +7,6 @@ export type WorkoutEntry = {
 
 export type WorkEntry = {
     todos: string[],
-}
-
-class FoodType {
 }
 
 export type NutritionEntry = {

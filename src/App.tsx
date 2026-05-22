@@ -3,6 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { format, addDays, subDays } from 'date-fns';
 import { de } from 'date-fns/locale';
 import './App.css';
+import GirlsEntry from './components/GirlsEntry';
+import NutritionEntry from './components/NutritionEntry';
+import WorkoutEntry from './components/WorkoutEntry';
+import { Workout } from './models/workout';
 
 interface Category {
   id: string;
@@ -17,6 +21,18 @@ const categories: Category[] = [
   { id: 'work', name: 'Arbeit', icon: '💼', color: 'info' },
   { id: 'women', name: 'Frauen', icon: '👩', color: 'danger' },
 ];
+
+const demoWorkout: Workout = {
+  id: 1,
+  name: 'Morning Grind',
+  rounds: 3,
+  timeLimit: 20,
+  exercises: [
+    { type: 'repetitions', repetitions: 20 },
+    { type: 'time', time: 60, unit: 'seconds' },
+    { type: 'distance', distance: 400, unit: 'meter' },
+  ],
+};
 
 function App() {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
@@ -97,27 +113,48 @@ function App() {
         <div className="container-fluid p-3">
           <div className="categories-stack">
             {categories.map((category) => (
-              <div key={category.id} className="category-card-wrapper">
-                <div className={`card category-card bg-${category.color} text-white`}>
-                  <div className="card-body d-flex flex-column">
-                    <div className="d-flex justify-content-between align-items-start mb-3">
-                      <span className="category-icon">{category.icon}</span>
-                      <button
-                        className="btn btn-sm btn-outline-light"
-                        title="Einstellungen"
-                        aria-label="Einstellungen"
-                      >
-                        ⚙️
-                      </button>
-                    </div>
-                    <h5 className="card-title flex-grow-1">{category.name}</h5>
-                    <div className="mt-auto">
-                      <small className="text-white-50">Klicke zum Bearbeiten</small>
+              <React.Fragment key={category.id}>
+                <div className="category-card-wrapper">
+                  <div className={`card category-card bg-${category.color} text-white`}>
+                    <div className="card-body d-flex flex-column">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="category-icon">{category.icon}</span>
+                        <button
+                          className="btn btn-sm btn-outline-light"
+                          title="Einstellungen"
+                          aria-label="Einstellungen"
+                        >
+                          ⚙️
+                        </button>
+                      </div>
+                      <h5 className="card-title flex-grow-1">{category.name}</h5>
+                      <div className="mt-auto">
+                        <small className="text-white-50">Klicke zum Bearbeiten</small>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+
+                {/* WorkoutEntry direkt unter Training */}
+                {category.id === 'training' && (
+                  <div className="entry-card-wrapper">
+                    <WorkoutEntry workout={demoWorkout} date={currentDate} />
+                  </div>
+                )}
+
+                {/* NutritionEntry direkt unter Ernährung */}
+                {category.id === 'nutrition' && (
+                  <div className="entry-card-wrapper">
+                    <NutritionEntry date={currentDate} />
+                  </div>
+                )}
+              </React.Fragment>
             ))}
+          </div>
+
+          {/* Girls Entry – Annäherungsarten */}
+          <div className="entry-card-wrapper">
+            <GirlsEntry date={currentDate} />
           </div>
         </div>
       </div>

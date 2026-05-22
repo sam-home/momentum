@@ -1,0 +1,115 @@
+.workout-entry-card {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: visible !important;  /* Bootstrap .card setzt overflow:hidden – überschreiben */
+}
+
+/* Meta badges */
+.workout-meta {
+  flex-wrap: wrap;
+}
+
+.workout-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+/* Exercise list */
+.workout-exercises {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.workout-exercise-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  backdrop-filter: blur(4px);
+}
+
+.exercise-icon-wrap {
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.exercise-text {
+  font-weight: 500;
+}
+
+/* Round status buttons */
+.workout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  backdrop-filter: blur(4px);
+}
+
+.workout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.workout-btn:active {
+  transform: scale(0.95);
+}
+
+.workout-btn.active {
+  border-color: transparent;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transform: scale(1.05);
+}
+
+.workout-btn.active.done {
+  background-color: #2ecc71;
+}
+
+.workout-btn.active.failed {
+  background-color: #e74c3c;
+}
+
+.workout-btn.active:hover {
+  transform: scale(1.12);
+}
+
+.workout-btn-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+@media (hover: none) {
+  .workout-btn {
+    width: 72px;
+    height: 72px;
+  }
+}
+

@@ -2,4 +2,4 @@ export type WeekDay = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday'
 
 export type DistanceUnit = 'meter' | 'kilometer'
 export type TimeUnit = 'hours' | 'minutes' | 'seconds'
-export type FoodTypes = 'sweets'|'cooked'|'fastfood'|'protein'
+export type FoodType = 'sweets'|'cooked'|'fastfood'|'protein'
