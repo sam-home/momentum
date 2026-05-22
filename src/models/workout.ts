@@ -1,8 +1,7 @@
 import {Exercise} from './exercise';
-import {WeekDay} from './units';
 
 export type Workout = {
-    weekDay: WeekDay,
+    name: string,
     rounds?: number,
     timeLimit?: number,
     exercises: Exercise[]
