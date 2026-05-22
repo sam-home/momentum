@@ -52,6 +52,10 @@ function App() {
   const formattedDate = format(currentDate, 'EEEE, d. MMMM yyyy', { locale: de });
   const isToday = format(currentDate, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd');
 
+  const handleBackToToday = () => {
+    setCurrentDate(new Date());
+  };
+
   return (
     <div className="app-container">
       {/* Date Header with Swipe */}
@@ -64,24 +68,37 @@ function App() {
       >
         <div className="card bg-dark text-white">
           <div className="card-body text-center py-4">
-            <h2 className="mb-0">
-              {formattedDate}
-              {isToday && <span className="badge bg-success ms-2">Heute</span>}
-            </h2>
-            <small className="text-muted d-block mt-2">
-              (Wische zum Wechseln)
-            </small>
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="flex-grow-1">
+                <h2 className="mb-0">
+                  {formattedDate}
+                  {isToday && <span className="badge bg-success ms-2">Heute</span>}
+                </h2>
+                <small className="text-muted d-block mt-2">
+                  (Wische zum Wechseln)
+                </small>
+              </div>
+              {!isToday && (
+                <button
+                  className="btn btn-success ms-3"
+                  onClick={handleBackToToday}
+                  title="Zurück zu heute"
+                >
+                  ← Heute
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Categories Grid */}
+      {/* Categories Container - Vertical Layout */}
       <div className="categories-container">
         <div className="container-fluid p-3">
-          <div className="row g-3">
+          <div className="categories-stack">
             {categories.map((category) => (
-              <div key={category.id} className="col-6">
-                <div className={`card category-card bg-${category.color} text-white h-100`}>
+              <div key={category.id} className="category-card-wrapper">
+                <div className={`card category-card bg-${category.color} text-white`}>
                   <div className="card-body d-flex flex-column">
                     <div className="d-flex justify-content-between align-items-start mb-3">
                       <span className="category-icon">{category.icon}</span>
